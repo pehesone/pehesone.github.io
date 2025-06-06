@@ -49,7 +49,7 @@ function typeWriter(element, text, i) {
     // Chama a si mesma novamente após um pequeno atraso para digitar a próxima letra
     setTimeout(function() {
       typeWriter(element, text, i + 1);
-    }, 150); // O número 150 é a velocidade da digitação em milissegundos. Aumente para mais devagar, diminua para mais rápido.
+    }, 150); 
   }
 }
 
