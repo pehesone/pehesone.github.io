@@ -1,0 +1,249 @@
+/* estilos.css */
+
+/*Estilos gerais do corpo da página */
+
+body {
+    font-family: Arial, sans-serif; /* define a fonte padrão na página */
+    margin: 0;                     /* tira as margens do navegador */
+    padding: 0;                    /* retira o preenchimento padrão do navegador */
+    background-color: #9EC5AB;     
+    color: #011502;                
+}
+
+
+
+/* Estilos do cabeçalho principal */
+
+
+
+header {
+    background-color: #01200F; /* cor de fundo escura para o cabeçalho (mesma do rodapé) */
+    color: #ffffff;           /* cor do texto branca para contraste */
+    padding: 20px 0;          /* espaçamento interno: 20px em cima/embaixo, 0px nos lados */
+    text-align: center;       /* centraliza o texto dentro do cabeçalho (como o título H1) */
+}
+
+header h1 {
+    margin: 0;                /* Remove margens padrão do H1 para melhor controle */
+    padding-bottom: 10px;     /* adiciona um pequeno espaçamento abaixo do H1 */
+}
+
+
+
+/*Estilos da barra de navegação (menu) */
+
+
+
+nav ul {
+    list-style-type: none;    /* tira os marcadores (bolinhas) da lista */
+    padding: 0;               /* tira o preenchimento padrão da lista */
+    margin: 0;                /* tira as margens padrão da lista */
+}
+
+nav ul li {
+    display: inline;          /* coloca os itens da lista alinhado */
+    margin: 0 15px;           /* espaçamento entre os itens do menu: 0px em cima/embaixo, 15px nos lados */
+}
+
+nav ul li a {
+    color: #ffffff;          
+    text-decoration: none;    /* tira o subilhado comum em links */
+    font-weight: bold;        /* deixa os links em negrito */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* adiciona sublinhado quando o mouse passa sobre o link */
+}
+
+
+
+/* Estilos do conteúdo principal (main) */
+
+
+
+main {
+    padding: 20px;               /* espaçamento interno nas laterais e em cima/embaixo da área principal */
+    max-width: 900px;            /* define uma largura máxima para o conteúdo principal */
+    margin: 20px auto;           /* centraliza o bloco de conteúdo principal na página e adiciona margem em cima/embaixo */
+    background-color: #ffffff;   /* cor de fundo branca para a área de conteúdo, para destacar do fundo da página */
+    border-radius: 20px;          /* adiciona bordas levemente arredondadas à área de conteúdo */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra sutil para dar profundidade */
+}
+
+
+
+/* Estilos para as seções dentro do main */
+
+
+
+section {
+    margin-bottom: 30px; /* adiciona um espaçamento abaixo de cada seção (Sobre Mim, Formação, etc.) */
+}
+
+section h2 {
+    color: #104F55;     
+    padding-bottom: 10px; /* espaçamento abaixo do título da seção */
+    border-bottom: 2px solid #eeeeee; /* linha sutil abaixo do título da seção */
+    margin-top: 0;       /* tira margem superior padrão do H2, se houver */
+}
+
+
+
+/* Estilos do rodapé */
+
+
+
+
+footer {
+    text-align: center;       /* centraliza o texto do rodapé */
+    padding: 20px 0;          /* espaçamento interno no rodapé (similar ao header) */
+    background-color: #01200F; 
+    color: #ffffff;           
+    margin-top: 30px;         /* espaçamento acima do rodapé, separando-o do conteúdo principal */
+}
+
+
+
+/* Estilos para o formulário de contato */
+
+
+
+#formulario-contato form div { /* Seleciona as divs dentro do formulário com id 'formulario-contato' */
+    margin-bottom: 15px;     /* espaçamento abaixo de cada grupo (label + input) */
+}
+
+#formulario-contato form label {
+    display: block;          /* label ocupe uma linha inteira, ficando acima do input */
+    margin-bottom: 5px;      /* pequeno espaçamento abaixo do label, antes do input */
+    font-weight: bold;       /* deixa o texto do label em negrito */
+}
+
+#formulario-contato form input[type="text"],
+#formulario-contato form input[type="email"],
+#formulario-contato form textarea {
+    width: calc(100% - 22px); /* ocupa todas larguras disponiveis */
+    padding: 10px;             /* espaçamento interno nos campos de input e textarea */
+    border: 1px solid #cccccc; /* borda cinza clara */
+    border-radius: 4px;        /* bordas levemente arredondadas para os campos */
+    box-sizing: border-box;    /* garante que padding e borda não aumentem a largura total do elemento */
+}
+
+#formulario-contato form textarea {
+    resize: vertical;          /* permite que o usuário redimensione a área de texto apenas verticalmente */
+}
+
+#formulario-contato form button[type="submit"] {
+    background-color: #104F55; 
+    color: white;              /* Texto do botão branco */
+    padding: 10px 20px;        /* epaçamento interno do botão */
+    border: none;              /* tira a borda padrão do botão */
+    border-radius: 4px;        /* bordas levemente arredondadas para o botão */
+    cursor: pointer;           /* muda o cursor para uma "mãozinha" ao passar sobre o botão */
+    font-size: 16px;           /* tamanho da fonte do botão */
+}
+
+#formulario-contato form button[type="submit"]:hover {
+    background-color: #32746D; 
+}
+
+
+
+/* Estilos para os artigos de projeto na página de portfólio */
+
+
+
+#meu-portfolio article { /* Seleciona os elementos <article> dentro da seção com id 'meu-portfolio' */
+    background-color: #ffffff; /* uma cor de fundo levemente diferente para destacar cada projeto */
+    border: 1px solid #dddddd; /* uma borda sutil ao redor de cada artigo de projeto */
+    border-radius: 6px;        /* cantos arredondados para os artigos */
+    padding: 15px;             /* espaçamento interno dentro de cada artigo */
+    margin-bottom: 20px;       /* espaçamento abaixo de cada artigo, separando-os */
+    transform-style: preserve-3d; /* cria o "espaço 3D" para o efeito */
+    transition: transform 0.1s ease; /* animação ao retirar mouse decima */
+}
+
+#meu-portfolio article h3 { /* seleciona os títulos <h3> dentro dos artigos de projeto */
+    color: #104F55;         
+    margin-top: 0;           /* tira a margem superior padrão do h3 */
+    margin-bottom: 10px;     /* espaçamento abaixo do título do projeto */
+}
+
+#meu-portfolio article p { /* seleciona os parágrafos <p> dentro dos artigos de projeto */
+    line-height: 1.6;        /* melhora a legibilidade do texto da descrição do projeto aumentando o espaço entre as linhas */
+    margin-bottom: 10px;     /* espaçamento abaixo do parágrafo de descrição */
+}
+
+#meu-portfolio article a { /* seleciona os links <a> dentro dos artigos de projeto */
+    display: inline-block;     /* permite definir padding e margin no link, e ele se comporta como um bloco mas flui com o texto */
+    background-color: #104F55; 
+    color: white;              /* texto do link branco */
+    padding: 8px 15px;         /* espaçamento interno para o link (botão) */
+    text-decoration: none;     /* tira o sublinhado padrão do link */
+    border-radius: 4px;        /* cantos arredondados para o link (botão) */
+}
+
+#meu-portfolio article a:hover { /* efeito ao passar o mouse sobre o link do projeto */
+    background-color: #32746D; /* escurece um pouco a cor de fundo do link (botão) */
+}
+
+
+
+/* Estilos para o botão "Voltar ao Topo" */
+
+
+
+#btnVoltarAoTopo {
+    display: none;             /* O botão começa escondido */
+    position: fixed;           /* posição fixa na tela, mesmo com rolagem */
+    bottom: 20px;              /* 20 pixels de distância da parte inferior da tela */
+    right: 30px;               /* 30 pixels de distância da parte direita da tela */
+    z-index: 99;               /* garante que o botão fique acima da maioria dos outros elementos */
+    border: none;              /* sem borda */
+    outline: none;             /* sem contorno ao clicar */
+    background-color: #104F55; 
+    color: white;              
+    cursor: pointer;           /* cursor de mãozinha ao passar o mouse */
+    padding: 15px;             /* espaçamento interno */
+    border-radius: 10px;       /* bordas arredondadas */
+    font-size: 18px;           /* tamanho do ícone/texto */
+}
+
+#btnVoltarAoTopo:hover {
+    background-color: #32746D; 
+}
+
+
+
+/* a animação de digitação */
+
+
+
+@keyframes typing {
+  from { width: 0 } /* começa com largura 0 (texto escondido) */
+  to { width: 100% } /* termina com largura total (texto visível) */
+}
+
+
+
+/* A animação do cursor piscando */
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent } /* cursor transparente */
+  50% { border-color: #104F55; } /* cursor com a sua nova cor de destaque */
+}
+
+#typing-title {
+  overflow: hidden;
+  border-right: .15em solid #104F55;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    typing 2.5s steps(14, end),
+    blink-caret .75s step-end infinite;
+}
+
+h1, h2, h3 {
+  font-family: "Savate", cursive;
+}
