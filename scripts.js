@@ -5,7 +5,7 @@ let mybutton = document.getElementById("btnVoltarAoTopo");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  // O "||" significa "OU"
+  
   // document.body.scrollTop > 20 -> para Safari
   // document.documentElement.scrollTop > 20 -> para Chrome, Firefox, IE e Opera
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -57,6 +57,8 @@ function typeWriter(element, text, i) {
 
 /* EFEITO DE INCLINAÇÃO 3D NOS CARDS DO PORTFÓLIO */
 
+
+
 // Seleciona todos os artigos (cards de projeto) dentro da seção de portfólio
 const portfolioCards = document.querySelectorAll("#meu-portfolio article");
 
@@ -65,16 +67,16 @@ portfolioCards.forEach(card => {
   // Evento para quando o mouse se move sobre o card
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect(); // Pega o tamanho e posição do card na tela
-    const x = e.clientX - rect.left; // Posição X do mouse dentro do card
-    const y = e.clientY - rect.top; // Posição Y do mouse dentro do card
+    const x = e.clientX - rect.left; /
+    const y = e.clientY - rect.top; 
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -10; // Calcula a rotação no eixo X (até -10 ou 10 graus)
-    const rotateY = ((x - centerX) / centerX) * 10; // Calcula a rotação no eixo Y (até -10 ou 10 graus)
+    const rotateX = ((y - centerY) / centerY) * -10; 
+    const rotateY = ((x - centerX) / centerX) * 10; 
 
-    // ESTA É A LINHA CORRIGIDA:
+
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
