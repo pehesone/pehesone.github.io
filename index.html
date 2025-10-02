@@ -3,94 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G1 - Terror em São Thomé das Letras</title>
+    <title>CNN Brasil - O Vulto de Setembro</title>
+    
     <style>
+        /* Importa as fontes que se aproximam do estilo CNN */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f0f0f0; /* Fundo mais claro, como o da CNN */
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
         }
+
+        /* Container Principal do Conteúdo */
         .container {
-            max-width: 800px;
+            max-width: 900px; /* Largura mais ampla para o conteúdo, como a CNN */
             background-color: #ffffff;
-            padding: 25px;
-            border-left: 1px solid #e0e0e0;
-            border-right: 1px solid #e0e0e0;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            margin-top: 0px; /* Remove a margem superior */
         }
-        .header {
-            color: #c4170c; /* Vermelho G1 */
-            font-weight: bold;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        h1 {
-            font-size: 2.2em;
-            color: #333;
-            margin-bottom: 5px;
-            line-height: 1.1;
-        }
-        h3 {
-            font-size: 1.2em;
-            color: #555;
-            font-weight: normal;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 20px;
-        }
-        .byline {
+
+        /* Cabeçalho Falso da CNN Brasil (barra preta superior) */
+        .fake-cnn-header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 0.9em;
-            color: #888;
-            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif; /* Fonte mais bold para o menu */
         }
-        .content p {
-            font-size: 1.1em;
-            line-height: 1.6;
+        .fake-cnn-header .logo {
+            color: #cc0000; /* Vermelho CNN */
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        .fake-cnn-header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        .fake-cnn-header nav a:hover {
+            color: #cc0000;
+        }
+        .fake-cnn-header .icons {
+            display: flex;
+            align-items: center;
+        }
+        .fake-cnn-header .icons span {
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+
+        /* Área do Título e Subtítulo da Matéria */
+        .header-materia {
+            padding: 30px 40px 20px 40px; /* Mais padding para o título */
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-materia .chapeu {
+            color: #cc0000; /* Vermelho CNN */
+            font-weight: 700;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .header-materia h1 {
+            font-family: 'Oswald', sans-serif; /* Fonte mais forte para o título */
+            font-size: 2.7em; /* Título maior */
+            font-weight: 700;
+            color: #1f1f1f;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .header-materia h3 {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.3em; /* Subtítulo maior */
+            color: #555;
+            font-weight: 400;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        /* Seção da Imagem Principal (Mantém sua imagem) */
+        .imagem-destaque {
+            width: 100%;
+            height: 500px; /* Altura maior para destaque */
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px; /* Mais espaço abaixo da imagem */
+        }
+
+        .imagem-destaque img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .imagem-destaque .credito-foto {
+            position: absolute;
+            bottom: 10px;
+            right: 10px; /* Crédito no canto inferior direito */
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            font-size: 0.8em;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        /* Informações do Autor e Data */
+        .byline {
+            font-size: 0.95em;
+            color: #777;
+            margin: 15px 40px; /* Mais padding lateral */
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .byline .author-date {
+            text-align: left;
+        }
+        .byline .updated {
+            text-align: right;
+            font-size: 0.9em;
+        }
+
+        .byline strong {
+            color: #000; /* Autor em preto, mais forte */
+            font-weight: 700;
+        }
+        
+        .byline time {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* Corpo do Texto da Notícia */
+        .content {
+            padding: 0 40px 50px 40px; /* Mais padding lateral e inferior */
+            font-size: 1.1em; /* Texto um pouco menor que o G1, mais próximo da CNN */
+            line-height: 1.75;
             color: #222;
         }
-        .quote {
-            border-left: 4px solid #c4170c;
-            padding-left: 15px;
-            margin: 25px 0;
-            font-style: italic;
-            color: #444;
+
+        .content p {
+            margin: 0 0 25px 0; /* Mais espaçamento entre parágrafos */
         }
-        b {
-            color: #000;
+        
+        .content p b:first-child {
+            text-transform: uppercase;
+            color: #1f1f1f;
+        }
+
+        /* Citações / Relatos */
+        .quote {
+            border-left: 4px solid #cc0000; /* Barra vermelha da CNN */
+            padding-left: 25px;
+            margin: 35px 0;
+            font-style: italic;
+            font-size: 1.15em; /* Citação um pouco maior */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .quote p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            G1 SUL DE MINAS
+        <div class="fake-cnn-header">
+            <div class="logo">CNN <span style="color:#fff;">BRASIL</span></div>
+            <nav>
+                <a href="#">Ao vivo</a>
+                <a href="#">Política</a>
+                <a href="#">WW</a>
+                <a href="#">Money</a>
+                <a href="#">Esportes</a>
+                <a href="#">Pop</a>
+                <a href="#">Viagem & Gastronomia</a>
+                <a href="#">COP30</a>
+            </nav>
+            <div class="icons">
+                <span>🔍</span>
+                <span>👤</span>
+            </div>
         </div>
-        <h1>Terror em São Thomé das Letras: 'Homem de Vermelho' é visto dentro de pousadas e relatos de ataques físicos assustam moradores</h1>
-        <h3>Visitantes relatam paralisia do sono, arranhões e a mesma descrição de um homem baixo, meio negro e de camisa vermelha, 94 anos após morte violenta no Mirante.</h3>
+
+        <div class="header-materia">
+            <div class="chapeu">Minas Gerais</div>
+            <h1>Terror em São Thomé das Letras: 'Homem de Vermelho' é visto dentro de pousadas e relatos de ataques físicos assustam moradores</h1>
+            <h3>Visitantes relatam paralisia do sono, arranhões e a mesma descrição de um homem baixo, meio negro e de camisa vermelha, 94 anos após morte violenta no Mirante.</h3>
+        </div>
+        
+        <div class="imagem-destaque">
+            <img src="https://i.ibb.co/1q23x4w/image.png" alt="Casa de Pedra em São Thomé das Letras">
+            <div class="credito-foto">Foto: Arquivo Pessoal / CNN Brasil</div>
+        </div>
+
         <div class="byline">
-            <strong>Por Lucas Mendes, G1 Sul de Minas</strong><br>
-            01/10/2025 23:20 ⋅ Atualizado há 5 minutos
+            <div class="author-date">
+                Por <strong>Lucas Mendes, CNN Brasil</strong><br>
+                <time>01/10/2025</time> às 23:20
+            </div>
+            <div class="updated">
+                Última atualização: 01/10/2025 às 23:25
+            </div>
         </div>
+
         <div class="content">
-            <p><b>SÃO THOMÉ DAS LETRAS, MG</b> – O que antes era sussurrado como lenda folclórica em São Thomé das Letras, hoje se tornou um grito de pânico que ecoa pelas ruas de pedra da cidade. A antiga história do "Homem de Vermelho", um espírito que assombrava a região do Mirante, escalou para relatos aterrorizantes de invasões a quartos de pousadas, paralisia do sono e agressões físicas. A cidade mística vive sob um véu de medo real.</p>
+            <p><b>São Thomé das Letras, MG</b> – O que antes era sussurrado como lenda folclórica em São Thomé das Letras, hoje se tornou um grito de pânico que ecoa pelas ruas de pedra da cidade. A antiga história do "Homem de Vermelho", um espírito que assombrava a região do Mirante, escalou para relatos aterrorizantes de invasões a quartos de pousadas, paralisia do sono e agressões físicas. A cidade mística vive sob um véu de medo real.</p>
             <p>A origem do pavor remonta a setembro de 1931. Julião, um homem baixo, meio negro, conhecido pelo temperamento arredio e por nunca tirar sua surrada camisa vermelha, morreu de forma brutal. Seu corpo foi encontrado estraçalhado nas pedras no fundo da ribanceira do Mirante, como se tivesse sido arremessado. A morte foi registrada como acidente, mas os mais velhos sempre falaram em vingança.</p>
             <p>Agora, 94 anos depois, a violência parece ter retornado. Os relatos não são mais de um vulto distante, mas de um encontro íntimo e apavorante.</p>
+            
             <div class="quote">
                 <p>"Acordei de madrugada sem conseguir me mexer. Meu corpo todo estava paralisado, só meus olhos se moviam", relata em lágrimas Amanda Costa, 26, turista de Campinas que se hospedou na cidade. <b>"No pé da minha cama, ele estava lá. Um homem baixo, de pele escura, com uma camisa vermelha que parecia úmida. Ele não falava nada, só me encarava com os olhos completamente vazios, mortos. O cheiro de mofo e terra molhada era insuportável. Senti uma pressão no meu peito, como se ele estivesse me sufocando. Foi o minuto mais longo da minha vida."</b></p>
             </div>
-            <p>O relato de Amanda não é isolado. Pelo menos outras cinco denúncias semelhantes foram registradas informalmente na Brigada Municipal nas últimas três semanas, todas envolvendo a paralisia do sono e a aparição da mesma figura.</p>
+
             <p><b>Da Paralisia à Agressão Física</b></p>
             <p>O medo se intensificou quando os fenômenos ultrapassaram a barreira do terror psicológico. Um grupo de amigos que acampava perto da <b>Cachoeira Véu da Noiva</b> fugiu da cidade após uma noite traumática.</p>
+            
             <div class="quote">
                 <p>"Ouvimos um som do lado de fora da barraca, como unhas arranhando a lona", conta um deles, que pediu para não ser identificado. "Quando abrimos um pouco o zíper, vimos ele agachado a uns dez metros de distância, de costas pra gente, cavando a terra com as mãos. Ele virou a cabeça devagar, e o pescoço fez um barulho de osso quebrando. O rosto dele... não era humano, o sorriso era torto demais, largo demais. Saímos correndo, deixamos tudo pra trás."</p>
             </div>
+
             <p>Mas o caso mais grave é o de Seu Benedito, de 78 anos, morador de uma casa antiga na subida para a Pirâmide. Ele foi encontrado desorientado em sua varanda, com <b>três arranhões profundos e paralelos no braço</b>.</p>
+            
             <div class="quote">
                 <p>"Eu não vi nada. Senti um frio na nuca e depois uma dor ardida no braço. Quando olhei, estava sangrando. O médico disse que parece arranhão de bicho, mas não tem bicho que faz isso. Foi o desgraçado. Foi o Julião. Ele está zangado. Ele não quer mais só assustar, ele quer machucar", disse o idoso à vizinhos, visivelmente abalado.</p>
             </div>
-            <p>O sargento Mauro Alves, da Brigada Municipal, pede cautela, mas admite a estranheza dos fatos. "Estamos cientes dos boatos que estão causando pânico. Oficialmente, não temos nenhuma ocorrência de agressão por desconhecido. Mas o volume de relatos é incomum. Pedimos que as pessoas evitem andar sozinhas por locais ermos durante a noite."</p>
+
             <p>Setembro termina, mas o medo em São Thomé das Letras permanece. A lenda deixou de ser um "causo" para se tornar uma ameaça palpável. A pergunta que fica no ar frio da montanha não é mais se o Homem de Vermelho existe, mas quem será sua próxima vítima.</p>
         </div>
     </div>
